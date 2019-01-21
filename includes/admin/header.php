@@ -10,4 +10,10 @@
 		    }
 	    ?>
 	</select>
+	<?php wp_enqueue_media(); ?>
+	<div class='image-preview-wrapper'>
+		<img id='image-preview' src='<?php echo gtnw_options::get_the_option('gtnw_logo'); ?>' width='200'>
+	</div>
+	<input id="upload_image_button" type="button" class="btn btn-info" value="<?php _e( 'Upload image' ); ?>" />
+	<input type='hidden' name='gtnw_logo' id='gtnw_logo' value='<?php echo gtnw_options::get_the_option('gtnw_logo'); ?>'>
 </div>

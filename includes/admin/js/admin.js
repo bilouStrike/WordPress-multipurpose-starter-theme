@@ -1,8 +1,9 @@
 jQuery( document ).ready( function( $ ) {
     $('#gtnw_theme_panel_form' ).submit( function( event ) {
-
+        // Display loading img
         $('.load').css('display', 'block');    
-        event.preventDefault(); // Prevent the default form submit.            
+        // Prevent the default form submit. 
+        event.preventDefault();            
         // serialize the form data
         let dataStored;
         var ajax_form_data = $("#gtnw_theme_panel_form").serialize();
@@ -24,6 +25,5 @@ jQuery( document ).ready( function( $ ) {
             $('.load').css('display', 'none');
             $('#error').fadeIn('slow');
         })
-           
     });       
 });

@@ -6,7 +6,7 @@
  * @since 1.0.0
  */
 ?>
-<div class="container" style="width:960px; margin-right:auto; margin-left:auto">
+<div id="container" class="container">
 <?php get_header(); ?>
 	
 		<?php

@@ -1,3 +1,36 @@
+.container {
+    background: #fff;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.container-fluid {
+    background: #000;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+body .header {
+    background: #fff;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.logo {
+    padding: 25px
+}
+.logo img {
+    width: 250px;
+}
+.header-ads {
+    padding: 25px;
+}
+.right-menu ul {
+    position:relative; 
+    top:50%; 
+}
+.right-search form {
+    position:relative; 
+    top:50%; 
+}
+/* Backgroud color */
 .bg-red{
 	background: red !important;
 }
@@ -9,13 +42,4 @@
 }
 .bg-green{
 	background: green;
-}
-.small-height{
-	height:50px;
-}
-.mediem-height{
-	height:150px;
-}
-.big-height{
-	height:450px;
 }
