@@ -6,16 +6,16 @@
  * @since 1.0.0
  */
 ?>
+<div class="container" style="width:960px; margin-right:auto; margin-left:auto">
 <?php get_header(); ?>
-	<div class="container">
+	
 		<?php
 		/*
-			post loop for index page
-			Get the activate template 
-			set loop module for this template 
+		posts loop for index page
 		*/
+		Gtnw_helpers::show_the_posts_loop();
 		?>
 		<?php get_sidebar(); ?>
-	</div>
+</div>
 <?php get_footer(); ?>
 		

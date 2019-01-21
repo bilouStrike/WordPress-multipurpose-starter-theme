@@ -18,13 +18,7 @@
 	<body <?php body_class(); ?>>
 		<?php
 			/*
-			Get the activate template 
-			Set the header style for this template 
-			header style : post_type_id
+			Get and show the active header template
 			*/
 			Gtnw_helpers::show_the_header_section();
-			/*$style = get_option('gtnw_panel_options');
-		    $header = get_post($style);
-			echo apply_filters('the_content',$header->post_content);
-			*/
 		?>

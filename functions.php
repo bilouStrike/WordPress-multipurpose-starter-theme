@@ -12,42 +12,46 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'No direct script access allowed' );
 }
 
-// Define our constants vars 
+// bootstrap style
+function themebs_enqueue_styles() {
+ 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
+ 	wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css' );
+ }
+
+add_action( 'wp_enqueue_scripts', 'themebs_enqueue_styles');
+
+// load constants 
 require_once('includes/constants.php');
+
+// Options manager 
+require_once('includes/gtnw_options.php');
+
+// Setup the theme
+require_once('includes/setup.php');
+
+// Configration values
+require_once('includes/gtnw_config.php');
 
 // Autoloading classes
 require_once('includes/autoload.php');
 
+// helpers class
+require_once('includes/gtnw_helpers.php');
+
 // load theme function
-require_once('includes/admin/settings.php');
-
-
-// load admin function
-
-$args = array(
-          'labels' => array(
-              'name' => 'Headers' ,
-              'singular_name' => 'header',
-              'add_new' => 'Add your custom header',
-              'add_new_item' => 'Add your header',
-              'edit_item' => 'Edit header',
-              'view_item' => 'View Header',
-          ),
-          'query_var' => 'gtnw_header',
-          'rewrite' => array(
-          'slug' => 'gtnw_header',
-          ),
-          'public' => true ,
-          'has_archive' => true,
-          'show_in_rest' => true, // Important !
-          'menu_position' => 25,
-          'supports' => array(
-            'title',
-            'editor',
-          ),
-        );
-
-register_post_type('gtnw_header', $args);
+if (is_admin())
+{
+  	function load_admin_script() {
+	 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
+  		wp_enqueue_style( 'style', get_template_directory_uri() . '/includes/admin/css/style.css?v='.time() );
+		wp_register_script( 'gtnw_ajax_handle', get_template_directory_uri() . '/includes/admin/js/admin.js?v='.time(), array('jquery'), null, true);	
+		wp_enqueue_script( 'gtnw_ajax_handle');	
+		$params = array ( 'ajaxurl' => admin_url( 'admin-ajax.php' ) , 'gtnw_ajax_token'  => wp_create_nonce('gtnw-security-nonce'));
+		wp_localize_script( 'gtnw_ajax_handle', 'params', $params );
+	}
+	add_action( 'admin_enqueue_scripts', 'load_admin_script');
+  	require_once('includes/admin/gtnw_panel.php');
+}
 
 ?>
 

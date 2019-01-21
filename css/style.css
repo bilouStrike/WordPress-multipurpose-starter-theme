@@ -1,0 +1,21 @@
+.bg-red{
+	background: red !important;
+}
+.bg-gray{
+	background: gray !important;
+}
+.bg-black{
+	background: #000 !important;
+}
+.bg-green{
+	background: green;
+}
+.small-height{
+	height:50px;
+}
+.mediem-height{
+	height:150px;
+}
+.big-height{
+	height:450px;
+}

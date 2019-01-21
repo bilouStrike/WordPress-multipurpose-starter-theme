@@ -1,6 +1,6 @@
 <?php
-
-class gtnw_options {
+/*
+class settings {
 
   public function __construct(){
 
@@ -9,7 +9,7 @@ class gtnw_options {
   }
   public static function add_menu_page()
   {
-  	add_menu_page('GutenWord' , 'GutenWord' , 'administrator' , 'gtnw_options_page' , array('gtnw_options' , 'display_options_page'));
+  	add_menu_page('GutenWord' , 'GutenWord' , 'administrator' , 'gtnw_options_page' , array('settings' , 'display_options_page'));
   }
   public static function display_options_page()
   {
@@ -26,7 +26,7 @@ class gtnw_options {
   }
   public function register_settings_and_fields()
   {
-  	register_setting('gtnw_panel_options' , 'gtnw_panel_options');
+  	register_setting('gtnw_panel_options' , 'gtnw_header_style');
   	add_settings_section('gtnw_main_section' , 'GutenWord Panel' , array($this , 'gtnw_main_section')  , 'gtnw_options_page');
     add_settings_field('gtnw_header_style' , 'Header style :' , array($this, 'gtnw_select_header_form') , 'gtnw_options_page' , 'gtnw_main_section');	
   }
@@ -38,28 +38,21 @@ class gtnw_options {
   {
     ?>
     <div class="form-group">
-      <select name="gtnw_panel_options">
-        <?php
-        $args = array( 'post_type' => 'gtnw_header');
-        $loop = new WP_Query( $args );
-        while ( $loop->have_posts() ) : $loop->the_post();
-          ?>
-            <option value="<?php echo the_ID(); ?>"> <?php the_title(); ?>   </option>
-          <?php
-        endwhile;
-      	?>
+      <select name="gtnw_header_style">
+        <option value="header_style_1"> Header style 1 </option>
+        <option value="header_style_2"> Header style 2 </option>
       </select>
     </div>
     <?php
   }
 }
 add_action('admin_init',  function(){
-  new gtnw_options();
+  new settings();
 });
 
 add_action('admin_menu' , function(){
-  gtnw_options::add_menu_page();
+  settings::add_menu_page();
 });
-
+*/
 
 ?>
