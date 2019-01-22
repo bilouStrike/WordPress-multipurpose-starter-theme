@@ -1,7 +1,7 @@
 <header id="header" class="header">
-	
+
             <!-- Top Bar -->
-            <?php require_once 'topbar_style.php'; ?>
+            <?php //require_once 'topbar_style.php'; ?>
 
             <!-- Logo and Adsense Section -->
             <div class="main-header">
