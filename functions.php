@@ -32,6 +32,9 @@ require_once('includes/setup.php');
 // Configration values
 require_once('includes/gtnw_config.php');
 
+// Components system 
+require_once('includes/gtnw_components.php');
+
 // Autoloading classes
 require_once('includes/autoload.php');
 

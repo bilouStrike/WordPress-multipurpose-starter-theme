@@ -18,6 +18,9 @@ class Gtnw_helpers
     		case 'footer':
     			self::$activate_section[$section] = gtnw_options::get_the_option('gtnw_footer_style');
     			break;
+    		case 'topbar':
+    			self::$activate_section[$section] = gtnw_options::get_the_option('gtnw_topbar_style');
+    			break;
     		default:
     			// throw error
     			break;
@@ -48,11 +51,26 @@ class Gtnw_helpers
 		load_template(GUTENWORD_THEME_DIR .'/parts/posts_loop_template/'.$header_file.'.php');
 	}
 
+	public static function show_the_topbar()
+	{
+		$topbar_view = gtnw_options::get_the_option('gtnw_topbar_view');
+		if( $topbar_view == 0 )
+		{
+			return;
+		}
+		self::activation_section_style('topbar');
+		if(empty(self::$activate_section['topbar']))
+			{
+				self::$activate_section['topbar'] = DEFAULT_POSTS_LOOP_STYLE ;
+			}
+		$topbar_style = self::$activate_section['topbar'];
+		load_template(GUTENWORD_THEME_DIR .'/parts/header/'.$topbar_style.'.php');
+	}
 	public static function show_the_footer_section()
 	{
-
+		
 	}
-
+	
 
 }
 
