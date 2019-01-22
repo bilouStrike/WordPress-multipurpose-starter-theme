@@ -13,7 +13,7 @@
 </div>
 <div class="form-group">
 	<input type="hidden" name="gtnw_topbar_view" value="0"> 
-	<input type="checkbox" name="gtnw_topbar_view" value="1"> Show topbar
+	<input type="checkbox" name="gtnw_topbar_view" value="1" <?php if(gtnw_options::$gtnw_options['gtnw_topbar_view'] == 1 ) { echo 'checked'; } ?>> Show topbar
 </div>
 <div class="form-group">
 	<label> Topbar style :</label>

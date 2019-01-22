@@ -13,7 +13,6 @@ class gtnw_options {
 	{
 		$options = get_option('gtnw_options');
 		self::$gtnw_options= $options;
-		var_dump($options);
 	}
 	public static function get_the_option($option_name , $default = '')
 	{

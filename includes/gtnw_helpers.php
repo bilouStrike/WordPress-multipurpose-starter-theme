@@ -35,8 +35,9 @@ class Gtnw_helpers
 			{
 				self::$activate_section['header'] = DEFAULT_HEADER_STYLE ;
 			}
-		$header_file = self::$activate_section['header'];
-		load_template(GUTENWORD_THEME_DIR .'/parts/header/'.$header_file.'.php');
+		$style_name = self::$activate_section['header'];
+		$style_path = GUTENWORD_THEME_DIR .'/parts/header/'.$style_name.'.php';
+		self::load_the_style( $style_name , $style_path );
 	}
 
 	public static function show_the_posts_loop()
@@ -47,8 +48,9 @@ class Gtnw_helpers
 			{
 				self::$activate_section['posts_loop'] = DEFAULT_POSTS_LOOP_STYLE ;
 			}
-		$header_file = self::$activate_section['posts_loop'];
-		load_template(GUTENWORD_THEME_DIR .'/parts/posts_loop_template/'.$header_file.'.php');
+		$style_name = self::$activate_section['posts_loop'];
+		$style_path = GUTENWORD_THEME_DIR .'/parts/posts_loop_template/'.$style_name.'.php';
+		self::load_the_style( $style_name , $style_path );
 	}
 
 	public static function show_the_topbar()
@@ -63,12 +65,24 @@ class Gtnw_helpers
 			{
 				self::$activate_section['topbar'] = DEFAULT_POSTS_LOOP_STYLE ;
 			}
-		$topbar_style = self::$activate_section['topbar'];
-		load_template(GUTENWORD_THEME_DIR .'/parts/header/'.$topbar_style.'.php');
+		$style_name = self::$activate_section['topbar'];
+		$style_path = GUTENWORD_THEME_DIR .'/parts/header/'.$style_name.'.php';
+		self::load_the_style( $style_name , $style_path );
 	}
 	public static function show_the_footer_section()
 	{
 		
+	}
+	public function load_the_style( $style_name , $style_path )
+	{
+		if(!empty($style_name) && file_exists($style_path))
+		{
+			load_template($style_path);
+		}
+		else
+		{
+			echo 'The file : '.$style_path.' not exists!';
+		}
 	}
 	
 
