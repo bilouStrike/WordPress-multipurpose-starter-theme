@@ -26,7 +26,7 @@
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Main Menu Here -->
-                        Main Menu 
+                        <?php require_once 'menu.php'; ?>
                     </div>
                         
                     <!-- Search Form -->

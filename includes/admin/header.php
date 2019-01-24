@@ -29,6 +29,21 @@
 	</select>
 </div>
 <div class="form-group">
+	<?php
+		$created_menu = get_terms( 'nav_menu', array( 'hide_empty' => false ) );
+	?>
+	<select name="gtnw_menu_selected" class="form-control">
+		<?php
+		$created_menu = get_terms( 'nav_menu', array( 'hide_empty' => false ) );
+		foreach ($created_menu as $menu_item) {
+			?>
+			<option value="<?php echo $menu_item->term_id; ?>"  <?php if(gtnw_options::$gtnw_options['gtnw_menu_selected'] == $menu_item->term_id) { echo 'selected'; } ?>> <?php echo $menu_item->name; ?> </option>
+			<?php
+		}
+		?>	
+	</select>
+</div>	
+<div class="form-group">
 	<?php wp_enqueue_media(); ?>
 	<div class='image-preview-wrapper'>
 		<img id='image-preview' src='<?php echo gtnw_options::get_the_option('gtnw_logo'); ?>' width='200'>

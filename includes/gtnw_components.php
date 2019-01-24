@@ -5,7 +5,7 @@
  */
 class gtnw_components
 {
-	public function gtnw_img_logo( $style , $class )
+	public static function gtnw_img_logo( $style , $class )
 	{
 		$url = gtnw_options::get_the_option('gtnw_logo');
 		$alt = gtnw_options::get_the_option('gtnw_logo_alt');
@@ -19,7 +19,11 @@ class gtnw_components
 			echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
 		}
 	}
-	public function gtnw_text_logo( $style , $class )
+	public static function gtnw_text_logo( $style , $class )
+	{
+		
+	}
+	public static function gtnw_header_menu()
 	{
 		
 	}

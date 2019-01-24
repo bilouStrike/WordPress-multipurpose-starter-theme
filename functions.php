@@ -13,21 +13,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // bootstrap style
-function themebs_enqueue_styles() {
+function gtnw_theme_enqueue_styles() {
  	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
  	wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css' );
  }
+add_action( 'wp_enqueue_scripts', 'gtnw_theme_enqueue_styles');
 
-add_action( 'wp_enqueue_scripts', 'themebs_enqueue_styles');
+// Setup the theme
+require_once('includes/setup.php');
 
 // load constants 
 require_once('includes/constants.php');
 
 // Options manager 
 require_once('includes/gtnw_options.php');
-
-// Setup the theme
-require_once('includes/setup.php');
 
 // Configration values
 require_once('includes/gtnw_config.php');
@@ -57,6 +56,9 @@ if (is_admin())
 	add_action( 'admin_enqueue_scripts', 'load_admin_script');
   	require_once('includes/admin/gtnw_panel.php');
 }
+
+
+
 
 ?>
 
