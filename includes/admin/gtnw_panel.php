@@ -12,7 +12,7 @@ class gtnw_panel {
   	public static function gtwn_display_panel_page()
 	{
 		?>
-		<div class="wrap">
+		<div class="wrap" style="background-color: #f5f5f5; padding:15px;">
 			<h2 class="title"> GutenWord theme panel : </h2>
 			<div class="load"></div>
 			<div id="saved" class="alert alert-success"> Success update! 

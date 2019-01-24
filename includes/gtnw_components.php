@@ -26,6 +26,8 @@ class gtnw_components
 	public static function gtnw_header_menu()
 	{
 		
+		
+		
 	}
 	
 }

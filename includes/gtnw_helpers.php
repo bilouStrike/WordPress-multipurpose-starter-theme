@@ -26,7 +26,17 @@ class Gtnw_helpers
     			break;
     	}
     }
-
+    public function load_the_style( $style_name , $style_path )
+	{
+		if(!empty($style_name) && file_exists($style_path))
+		{
+			load_template($style_path);
+		}
+		else
+		{
+			echo 'The file : '.$style_path.' not exists!';
+		}
+	}
 	public static function show_the_header_section()
 	{
 		// Get the activate header style (header template)
@@ -69,22 +79,24 @@ class Gtnw_helpers
 		$style_path = GUTENWORD_THEME_DIR .'/parts/header/'.$style_name.'.php';
 		self::load_the_style( $style_name , $style_path );
 	}
-	public static function show_the_footer_section()
+	public static function show_topbar_menu()
 	{
-		
+		$gtnw_show_topbar_menu = gtnw_options::get_the_option('gtnw_topbar_menu');
+		if( $gtnw_show_topbar_menu == 0 )
+		{
+			return;
+		}
+		load_template(GUTENWORD_THEME_DIR .'/parts/header/topbar_menu.php');
 	}
-	public function load_the_style( $style_name , $style_path )
+	public static function show_topbar_social_icon()
 	{
-		if(!empty($style_name) && file_exists($style_path))
+		$gtnw_topbar_social_icon = gtnw_options::get_the_option('gtnw_topbar_social');
+		if( $gtnw_topbar_social_icon == 0 )
 		{
-			load_template($style_path);
+			return;
 		}
-		else
-		{
-			echo 'The file : '.$style_path.' not exists!';
-		}
+		load_template(GUTENWORD_THEME_DIR .'/parts/header/topbar_social.php');
 	}
-	
 
 }
 

@@ -5,7 +5,8 @@ function gtnw_setup_theme()
 	add_theme_support( 'custom-logo' );
 	add_theme_support( 'menus' );
 	register_nav_menus( array(
-		'header-menu' => 'Header Menu',
+		'topbar-menu' => 'Top Menu',
+		'header-menu' => 'Header Menu', // Main menu
 		'footer-menu' => 'Footer Menu',
 	));
 }

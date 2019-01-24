@@ -2,11 +2,11 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="collapse navbar-collapse" id="navbarText">
         <!-- Left Menu -->
-        Left menu here
+            <?php gtnw_helpers::show_topbar_menu(); ?>
         </div>
         <div class="social-media">
         <!-- Social Media Icons -->
-        Social Media Icons Here
+        <?php gtnw_helpers::show_topbar_social_icon(); ?>
         </div>
     </nav>
 </div>

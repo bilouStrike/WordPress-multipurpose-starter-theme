@@ -19,3 +19,11 @@
 	font-size: 20px; 
 	text-align: center;
 }
+.form-group{
+	border-top: 1px solid #999;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+.form-group label {
+	font-weight: bold;
+}
