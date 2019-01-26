@@ -25,10 +25,12 @@ class gtnw_panel {
 				   <span aria-hidden="true">&times;</span>
 				</button>
 			</div>
+
 			<form method="POST" action="admin-post.php" id="gtnw_theme_panel_form" enctype="multipart/form-data">
 				<input type="hidden" name="action" value="gtnw_process_options">
 				<?php  wp_nonce_field('gtnw_token_key'); ?>
 				<?php require_once 'header.php';?>
+				<?php require_once 'category.php';?>
 				<input type="submit" name="process" value="submit">
 			</form>	
 		</div>

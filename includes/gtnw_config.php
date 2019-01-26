@@ -13,13 +13,19 @@ class gtnw_config
 			'Header style 3' => 'header_style_3'
 		);
 	}
-	
 	public static function topbar_styles()
 	{
 		return array(
 			'TopBar style 1' => 'topbar_style_1',
 			'TopBar style 2' => 'topbar_style_2',
 			'TopBar style 3' => 'topbar_style_3'
+		);
+	}
+	public static function category_header_styles()
+	{
+		return array(
+			'Category header style 1' => 'header_category_style1',
+			'Category header style 2' => 'header_category_style2'
 		);
 	}
 }

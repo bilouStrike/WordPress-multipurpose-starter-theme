@@ -21,11 +21,15 @@ class Gtnw_helpers
     		case 'topbar':
     			self::$activate_section[$section] = gtnw_options::get_the_option('gtnw_topbar_style');
     			break;
+    		case 'category_header':
+    			self::$activate_section[$section] = gtnw_options::get_the_option('gtnw_category_header_style');
+    			break;
     		default:
     			// throw error
     			break;
     	}
     }
+
     public function load_the_style( $style_name , $style_path )
 	{
 		if(!empty($style_name) && file_exists($style_path))
@@ -37,6 +41,7 @@ class Gtnw_helpers
 			echo 'The file : '.$style_path.' not exists!';
 		}
 	}
+
 	public static function show_the_header_section()
 	{
 		// Get the activate header style (header template)
@@ -59,7 +64,19 @@ class Gtnw_helpers
 				self::$activate_section['posts_loop'] = DEFAULT_POSTS_LOOP_STYLE ;
 			}
 		$style_name = self::$activate_section['posts_loop'];
-		$style_path = GUTENWORD_THEME_DIR .'/parts/posts_loop_template/'.$style_name.'.php';
+		$style_path = GUTENWORD_THEME_DIR .'/parts/posts_loop_style/'.$style_name.'.php';
+		self::load_the_style( $style_name , $style_path );
+	}
+
+	public static function show_category_header()
+	{
+		self::activation_section_style('category_header');
+		if(empty(self::$activate_section['category_header']))
+			{
+				self::$activate_section['category_header'] = DEFAULT_CATEGORY_HEADER_STYLE ;
+			}
+		$style_name = self::$activate_section['category_header'];
+		$style_path = GUTENWORD_THEME_DIR .'/parts/category/'.$style_name.'.php';
 		self::load_the_style( $style_name , $style_path );
 	}
 
@@ -79,6 +96,7 @@ class Gtnw_helpers
 		$style_path = GUTENWORD_THEME_DIR .'/parts/header/'.$style_name.'.php';
 		self::load_the_style( $style_name , $style_path );
 	}
+
 	public static function show_topbar_menu()
 	{
 		$gtnw_show_topbar_menu = gtnw_options::get_the_option('gtnw_topbar_menu');
@@ -88,6 +106,7 @@ class Gtnw_helpers
 		}
 		load_template(GUTENWORD_THEME_DIR .'/parts/header/topbar_menu.php');
 	}
+
 	public static function show_topbar_social_icon()
 	{
 		$gtnw_topbar_social_icon = gtnw_options::get_the_option('gtnw_topbar_social');

@@ -1,20 +1,18 @@
 <?php
 /**
- * The template for displaying the category
+ * The template for displaying posts category
  *
  * @package GutenWord
  * @since 1.0.0
  */
 ?>
-<?php get_header(); ?>
-	<div class="container">
-		<?php
-		/*
-			post loop for category page
-			Get the activate template 
-			set loop module (style) for this template 
-		*/
-		?>
-		<?php get_sidebar(); ?>
-	</div>
+<div id="container" class="container">
+<?php get_header(); 
+		
+	Gtnw_helpers::show_category_header();
+	Gtnw_helpers::show_the_posts_loop();
+	
+	get_sidebar();
+ ?>
+</div>
 <?php get_footer(); ?>

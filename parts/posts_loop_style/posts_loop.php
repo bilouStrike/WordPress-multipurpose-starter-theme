@@ -1,3 +1,4 @@
+
 <div class="row">
 	<div class="card" style="width: 18rem;">
 	  <img src="<?php echo GUTENWORD_THEME_URI; ?>/includes/images/Travel-Cheap-1024x441.jpg" class="card-img-top" alt="...">

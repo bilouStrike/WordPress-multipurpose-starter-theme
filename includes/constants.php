@@ -10,5 +10,6 @@ define('DEFAULT_POSTS_LOOP_STYLE' , 'posts_loop');
 define('DEFAULT_SINGLE_STYLE' , 'single_style');
 define('DEFAULT_FOOTER_STYLE' , 'footer_style');
 define('DEFAULT_TOPBAR_STYLE' , 'topbar_style_1');
+define('DEFAULT_CATEGORY_HEADER_STYLE' , 'header_category_style1');
 
 ?>

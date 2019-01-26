@@ -1,3 +1,4 @@
+<h2> Header settings :</h2>
 <div class="form-group">
 	<label> Header style :</label>
 	<select name="gtnw_header_style" class="form-control">
