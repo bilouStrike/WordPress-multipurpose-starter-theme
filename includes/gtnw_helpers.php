@@ -24,6 +24,12 @@ class Gtnw_helpers
     		case 'category_header':
     			self::$activate_section[$section] = gtnw_options::get_the_option('gtnw_category_header_style');
     			break;
+    		case 'categoryTopPosts':
+    			self::$activate_section[$section] = gtnw_options::get_the_option('gtnw_category_TopPosts_style');
+    			break;
+    		case 'category_posts_style':
+    			self::$activate_section[$section] = gtnw_options::get_the_option('gtnw_category_posts_style');
+    			break;
     		default:
     			// throw error
     			break;
@@ -115,6 +121,38 @@ class Gtnw_helpers
 			return;
 		}
 		load_template(GUTENWORD_THEME_DIR .'/parts/header/topbar_social.php');
+	}
+
+	public static function show_category_header_section()
+	{
+		$gtnw_header_section = gtnw_options::get_the_option('gtnw_cat_header_section');
+		if( $gtnw_header_section == 0 )
+		{
+			return;
+		}
+		load_template(GUTENWORD_THEME_DIR .'/parts/category/category_header_section.php');
+	}
+	public static function show_category_top_posts()
+	{
+		self::activation_section_style('categoryTopPosts');
+		if(empty(self::$activate_section['categoryTopPosts']))
+			{
+				self::$activate_section['categoryTopPosts'] = DEFAULT_POSTS_LOOP_STYLE ;
+			}
+		$style_name = self::$activate_section['categoryTopPosts'];
+		$style_path = GUTENWORD_THEME_DIR .'/parts/category/'.$style_name.'.php';
+		self::load_the_style( $style_name , $style_path );
+	}
+	public static function show_category_loop_posts_style()
+	{
+		self::activation_section_style('category_posts_style');
+		if(empty(self::$activate_section['category_posts_style']))
+			{
+				self::$activate_section['category_posts_style'] = CATEGORY_POSTS_LOOP_STYLE ;
+			}
+		$style_name = self::$activate_section['category_posts_style'];
+		$style_path = GUTENWORD_THEME_DIR .'/parts/posts_loop_style/'.$style_name.'.php';
+		self::load_the_style( $style_name , $style_path );
 	}
 
 }

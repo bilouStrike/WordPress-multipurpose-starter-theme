@@ -11,7 +11,6 @@
 		
 	Gtnw_helpers::show_category_header();
 	Gtnw_helpers::show_the_posts_loop();
-	
 	get_sidebar();
  ?>
 </div>

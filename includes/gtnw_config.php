@@ -21,11 +21,26 @@ class gtnw_config
 			'TopBar style 3' => 'topbar_style_3'
 		);
 	}
+	public static function posts_loop_styles()
+	{
+		return array(
+			'Posts loop style 1' => 'posts_loop_style1',
+			'Posts loop style 2' => 'posts_loop_style2'
+		);
+	}
 	public static function category_header_styles()
 	{
 		return array(
 			'Category header style 1' => 'header_category_style1',
 			'Category header style 2' => 'header_category_style2'
+		);
+	}
+	public static function category_top_posts_styles()
+	{
+		return array(
+			'Catgeory Top posts style 1' => 'cat_top_posts_style1',
+			'Catgeory Top posts style 2' => 'cat_top_posts_style2',
+			
 		);
 	}
 }

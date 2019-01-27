@@ -5,6 +5,7 @@
  */
 class gtnw_components
 {
+	private static $components_path = GUTENWORD_COMPONENTS;
 	public static function gtnw_img_logo( $style , $class )
 	{
 		$url = gtnw_options::get_the_option('gtnw_logo');
@@ -23,11 +24,10 @@ class gtnw_components
 	{
 		
 	}
-	public static function gtnw_header_menu()
+	public static function gtnw_posts_pagination()
 	{
-		
-		
-		
+		$path = self::$components_path.'/posts_pagination.php';
+		gtnw_helpers::load_the_style('posts_pagination',$path);
 	}
 	
 }
