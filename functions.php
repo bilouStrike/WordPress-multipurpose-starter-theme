@@ -11,13 +11,23 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'No direct script access allowed' );
 }
-
 // bootstrap style
 function gtnw_theme_enqueue_styles() {
+	global $wp_query; 
  	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
  	wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css' );
 
- 	wp_register_script( 'bootstrap_js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), null, true);	
+ 	// load more pagination
+ 	wp_register_script( 'gtnw_loadmore', get_template_directory_uri() . '/js/gtnwloadmore.js?v='.time() , array('jquery'));
+ 	wp_localize_script( 'gtnw_loadmore', 'gtnw_loadmore_params', array(
+		'ajaxurl' => admin_url( 'admin-ajax.php' ), // WordPress AJAX
+		'posts' => json_encode($wp_query->query_vars), // everything about your loop is here
+		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+		'max_page' => $wp_query->max_num_pages
+	));
+ 	wp_enqueue_script( 'gtnw_loadmore' );
+
+ 	wp_register_script( 'bootstrap_js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), null, true );	
 	wp_enqueue_script( 'bootstrap_js');
  }
 add_action( 'wp_enqueue_scripts', 'gtnw_theme_enqueue_styles');
@@ -33,6 +43,10 @@ require_once('includes/gtnw_options.php');
 
 // Configration values
 require_once('includes/gtnw_config.php');
+// helpers class
+require_once('includes/gtnw_helpers.php');
+// Ajax 
+require_once('includes/gtnw_ajax.php');
 
 // Components system 
 require_once('includes/gtnw_components.php');
@@ -40,8 +54,7 @@ require_once('includes/gtnw_components.php');
 // Autoloading classes
 require_once('includes/autoload.php');
 
-// helpers class
-require_once('includes/gtnw_helpers.php');
+
 
 // load theme function
 if (is_admin())

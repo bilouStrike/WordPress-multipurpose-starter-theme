@@ -36,23 +36,8 @@ class gtnw_panel {
 		</div>
 		<?php
 	}
-	public function gtnw_data_process()
-	{
-		if (!check_ajax_referer('gtnw-security-nonce','gtnw_ajax_token')) {
-			wp_send_json_error( 'Invalid security token sent.');
-    		wp_die();
-		}
-		sleep(1);
-		parse_str($_POST['dataStored'], $searcharray);
-		foreach ($searcharray as $name => $value) {
-			gtnw_options::update_the_option($name , $value);
-		}
-		gtnw_options::do_update();
-		wp_die(); 
-	}
+	
 }
 new gtnw_panel();
-add_action('wp_ajax_gtnw_process_options' , function() {
-	gtnw_panel::gtnw_data_process();
-});
+
 ?>
