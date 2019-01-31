@@ -10,17 +10,8 @@
 <?php get_header(); ?>
 		<?php
 		// Header dynamic section
-		//gtnw_helpers::the_signle_header();
-
-		// Body (post content) style
-		//gtnw_helpers::the_signle_body();
-
-		// Footer dynamic section
-		//gtnw_helpers::the_signle_footer();
-
-		
+		gtnw_helpers::show_the_single();
 		?>
-		
 <?php get_sidebar(); ?>
 </div>
 <?php get_footer(); ?>

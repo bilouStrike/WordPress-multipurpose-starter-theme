@@ -16,6 +16,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Setup the theme
 require_once('includes/setup.php');
 
+// Autoloading classes
+require_once('includes/autoload.php');
+
 // load constants 
 require_once('includes/constants.php');
 

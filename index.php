@@ -8,7 +8,6 @@
 ?>
 <div id="container" class="container">
 <?php get_header(); ?>
-	
 		<?php
 		Gtnw_helpers::show_category_header();
 		Gtnw_helpers::show_category_header_section();

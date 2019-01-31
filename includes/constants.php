@@ -14,5 +14,6 @@ define('DEFAULT_TOPBAR_STYLE' , 'topbar_style_1');
 define('DEFAULT_CATEGORY_HEADER_STYLE' , 'header_category_style1');
 define('DEFAULT_CATEGORY_HEADER_STYLE' , 'header_category_style1');
 define('DEFAULT_CATEGORY_POSTS_LOOP_STYLE' , 'posts_loop_style1');
+define('DEFAULT_SINGLE_TEMPLATE' , 'single_template');
 
 ?>

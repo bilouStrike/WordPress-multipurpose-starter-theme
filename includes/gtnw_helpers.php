@@ -154,6 +154,40 @@ class Gtnw_helpers
 		$style_path = GUTENWORD_THEME_DIR .'/parts/posts_loop_style/'.$style_name.'.php';
 		self::load_the_style( $style_name , $style_path );
 	}
+	public static function show_the_single()
+	{
+		self::activation_section_style('the_single_template');
+		if(empty(self::$activate_section['the_single_template']))
+			{
+				self::$activate_section['the_single_template'] = DEFAULT_SINGLE_TEMPLATE ;
+			}
+		$style_name = self::$activate_section['the_single_template'];
+		$style_path = GUTENWORD_THEME_DIR .'/parts/single/'.$style_name.'.php';
+		self::load_the_style( $style_name , $style_path );
+	}
+	public static function the_signle_header()
+	{
+		$gtnw_header_single = gtnw_options::get_the_option('gtnw_header_single');
+		if( $gtnw_header_single == 0 )
+		{
+			return;
+		}
+		load_template(GUTENWORD_THEME_DIR .'/parts/single/header_single.php');
+	}
+	public static function the_signle_footer()
+	{
+		$gtnw_footer_single = gtnw_options::get_the_option('gtnw_footer_single');
+		if( $gtnw_footer_single == 0 )
+		{
+			return;
+		}
+		load_template(GUTENWORD_THEME_DIR .'/parts/single/footer_single.php');
+	}
+	public static function the_signle_body()
+	{
+		load_template(GUTENWORD_THEME_DIR .'/parts/single/body_single.php');
+	}
+
 
 }
 

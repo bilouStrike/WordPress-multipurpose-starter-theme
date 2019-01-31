@@ -2,14 +2,15 @@
 
 class gtnw_single 
 {
+	private $post = '';
 	
-	function __construct(argument)
+	function __construct()
 	{
-		# code...
+		$this->post = $post ;
 	}
 	function the_title()
 	{
-
+		return get_the_title($this->post);
 	}
 	function the_author()
 	{
