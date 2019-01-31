@@ -40,9 +40,18 @@ class gtnw_config
 		return array(
 			'Catgeory Top posts style 1' => 'cat_top_posts_style1',
 			'Catgeory Top posts style 2' => 'cat_top_posts_style2',
-			
 		);
 	}
+	public static function all_pagination_styles()
+	{
+		return array(
+			'Normal' => 'normal_pagination',
+			'Load more' => 'loadmore_pagination',
+			'Inifinite' => 'infinite_pagination'
+		);
+	}
+
+
 }
 
 ?>

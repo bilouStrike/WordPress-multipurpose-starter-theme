@@ -10,9 +10,6 @@
 <?php get_header(); ?>
 	
 		<?php
-		/*
-		posts loop for index page
-		*/
 		Gtnw_helpers::show_category_header();
 		Gtnw_helpers::show_category_header_section();
 		Gtnw_helpers::show_the_posts_loop();

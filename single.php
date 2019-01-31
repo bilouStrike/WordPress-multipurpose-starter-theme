@@ -6,15 +6,22 @@
  * @since 1.0.0
  */
 ?>
+<div id="container" class="container">
 <?php get_header(); ?>
-	<div class="container">
 		<?php
-			/*
-			Get the activate template 
-			Set the single style for this template
-			*/
+		// Header dynamic section
+		//gtnw_helpers::the_signle_header();
+
+		// Body (post content) style
+		//gtnw_helpers::the_signle_body();
+
+		// Footer dynamic section
+		//gtnw_helpers::the_signle_footer();
+
+		
 		?>
-		<?php get_sidebar(); ?>
-	</div>
+		
+<?php get_sidebar(); ?>
+</div>
 <?php get_footer(); ?>
 		

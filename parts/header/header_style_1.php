@@ -15,7 +15,7 @@
                         <div class="col-sm">
                             <div class="header-ads">
                                 <!-- The Adsense Code here -->
-                                <img src="img/728_90_ads.png" alt="ads" >
+                                <img src="" alt="" >
                             </div>
                         </div>
                 </div>

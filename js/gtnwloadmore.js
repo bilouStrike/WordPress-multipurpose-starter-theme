@@ -6,8 +6,7 @@ jQuery(function($){
 			'query': gtnw_loadmore_params.posts, 
 			'page' : gtnw_loadmore_params.current_page
 		};
- 
-		$.ajax({ 
+ 		$.ajax({ 
 			url : gtnw_loadmore_params.ajaxurl, // AJAX handler
 			data : data,
 			type : 'POST',
@@ -16,7 +15,7 @@ jQuery(function($){
 			},
 			success : function( data ){
 				if( data ) { 
-					button.text( 'More posts' ).prev().before(data); // insert new posts
+					button.text( 'More posts' ).before(data); // insert new posts
 					gtnw_loadmore_params.current_page++;
  
 					if ( gtnw_loadmore_params.current_page == gtnw_loadmore_params.max_page ) 

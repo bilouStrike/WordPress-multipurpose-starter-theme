@@ -29,7 +29,7 @@
              <!-- Google Adsense -->
              <div class="header-ads text-center">
                 <!-- The Adsense Code here -->
-                <img src="img/728_90_ads.png" alt="ads" >
+                <img src="" alt="" >
             </div>
                 
         </header>

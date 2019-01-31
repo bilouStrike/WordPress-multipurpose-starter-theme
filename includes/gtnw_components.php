@@ -23,7 +23,7 @@ class gtnw_components
 	public static function gtnw_text_logo( $style , $class )
 	{
 		
-	}
+	}	
 	public static function gtnw_posts_pagination()
 	{
 		$path = self::$components_path.'/posts_pagination.php';
