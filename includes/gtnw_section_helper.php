@@ -2,7 +2,7 @@
 /**
  * Gtnw_helpers
  */
-class Gtnw_helpers
+class gtnw_section_helper
 {
 	private static $activate_section = array();
 
@@ -132,6 +132,7 @@ class Gtnw_helpers
 		}
 		load_template(GUTENWORD_THEME_DIR .'/parts/category/category_header_section.php');
 	}
+
 	public static function show_category_top_posts()
 	{
 		self::activation_section_style('categoryTopPosts');
@@ -143,6 +144,7 @@ class Gtnw_helpers
 		$style_path = GUTENWORD_THEME_DIR .'/parts/category/'.$style_name.'.php';
 		self::load_the_style( $style_name , $style_path );
 	}
+
 	public static function show_category_loop_posts_style()
 	{
 		self::activation_section_style('category_posts_style');
@@ -154,6 +156,7 @@ class Gtnw_helpers
 		$style_path = GUTENWORD_THEME_DIR .'/parts/posts_loop_style/'.$style_name.'.php';
 		self::load_the_style( $style_name , $style_path );
 	}
+
 	public static function show_the_single()
 	{
 		self::activation_section_style('the_single_template');
@@ -165,6 +168,7 @@ class Gtnw_helpers
 		$style_path = GUTENWORD_THEME_DIR .'/parts/single/'.$style_name.'.php';
 		self::load_the_style( $style_name , $style_path );
 	}
+
 	public static function the_signle_header()
 	{
 		$gtnw_header_single = gtnw_options::get_the_option('gtnw_header_single');
@@ -174,6 +178,7 @@ class Gtnw_helpers
 		}
 		load_template(GUTENWORD_THEME_DIR .'/parts/single/header_single.php');
 	}
+
 	public static function the_signle_footer()
 	{
 		$gtnw_footer_single = gtnw_options::get_the_option('gtnw_footer_single');
@@ -183,6 +188,7 @@ class Gtnw_helpers
 		}
 		load_template(GUTENWORD_THEME_DIR .'/parts/single/footer_single.php');
 	}
+
 	public static function the_signle_body()
 	{
 		load_template(GUTENWORD_THEME_DIR .'/parts/single/body_single.php');

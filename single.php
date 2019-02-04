@@ -10,7 +10,7 @@
 <?php get_header(); ?>
 		<?php
 		// Header dynamic section
-		gtnw_helpers::show_the_single();
+		gtnw_section_helper::show_the_single();
 		?>
 <?php get_sidebar(); ?>
 </div>

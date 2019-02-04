@@ -32,7 +32,7 @@ require_once('includes/load_enqueue.php');
 require_once('includes/gtnw_config.php');
 
 // helpers class
-require_once('includes/gtnw_helpers.php');
+require_once('includes/gtnw_section_helper.php');
 
 // Ajax 
 require_once('includes/gtnw_ajax.php');
@@ -58,10 +58,6 @@ function get_current_template( $echo = false ) {
         return $GLOBALS['current_theme_template'];
 }
 */
-
-
-
-
 
 // load theme function
 if (is_admin())

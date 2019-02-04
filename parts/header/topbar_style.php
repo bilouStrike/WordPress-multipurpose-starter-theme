@@ -1,4 +1,4 @@
 <?php
 // call the topbar styles
-Gtnw_helpers::show_the_topbar(); ?>
+gtnw_section_helper::show_the_topbar(); ?>
 

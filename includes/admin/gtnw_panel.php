@@ -30,6 +30,7 @@ class gtnw_panel {
 				<?php  wp_nonce_field('gtnw_token_key'); ?>
 				<?php require_once 'header.php';?>
 				<?php require_once 'category.php';?>
+				<?php require_once 'single_post.php';?>
 				<input type="submit" name="process" value="submit">
 			</form>	
 		</div>

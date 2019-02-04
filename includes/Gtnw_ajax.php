@@ -11,7 +11,6 @@ class Gtnw_ajax
 			wp_send_json_error( 'Invalid security token sent.');
     		wp_die();
 		}
-		sleep(1);
 		parse_str($_POST['dataStored'], $searcharray);
 		foreach ($searcharray as $name => $value) {
 			gtnw_options::update_the_option($name , $value);
@@ -25,7 +24,7 @@ class Gtnw_ajax
 		$args['paged'] = $_POST['page'] + 1; // next page to be loaded
 		$args['post_status'] = 'publish';
 	 	query_posts( $args );
-	 	Gtnw_helpers::show_the_posts_loop();
+	 	gtnw_section_helper::show_the_posts_loop();
 		die;
 	}
 }

@@ -9,9 +9,9 @@
 <div id="container" class="container">
 <?php get_header(); ?>
 		<?php
-		Gtnw_helpers::show_category_header();
-		Gtnw_helpers::show_category_header_section();
-		Gtnw_helpers::show_the_posts_loop();
+		gtnw_section_helper::show_category_header();
+		gtnw_section_helper::show_category_header_section();
+		gtnw_section_helper::show_the_posts_loop();
 		gtnw_components::gtnw_posts_pagination();
 		?>
 		<?php get_sidebar(); ?>

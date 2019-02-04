@@ -27,7 +27,7 @@ class gtnw_components
 	public static function gtnw_posts_pagination()
 	{
 		$path = self::$components_path.'/posts_pagination.php';
-		gtnw_helpers::load_the_style('posts_pagination',$path);
+		gtnw_section_helper::load_the_style('posts_pagination',$path);
 	}
 	
 }

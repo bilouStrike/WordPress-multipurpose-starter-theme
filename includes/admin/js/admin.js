@@ -25,5 +25,7 @@ jQuery( document ).ready( function( $ ) {
             $('.load').css('display', 'none');
             $('#error').fadeIn('slow');
         })
-    });       
+    });    
+    $.switcher();
+   
 });

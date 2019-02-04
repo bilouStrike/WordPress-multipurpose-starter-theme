@@ -20,5 +20,5 @@
 			/*
 			Get and show the active header template
 			*/
-			Gtnw_helpers::show_the_header_section();
+			gtnw_section_helper::show_the_header_section();
 		?>
