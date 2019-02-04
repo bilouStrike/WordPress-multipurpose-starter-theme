@@ -9,8 +9,7 @@
 <div id="container" class="container">
 <?php get_header(); ?>
 		<?php
-		gtnw_section_helper::show_category_header();
-		gtnw_section_helper::show_category_header_section();
+		gtnw_section_helper::the_category_header();
 		gtnw_section_helper::show_the_posts_loop();
 		gtnw_components::gtnw_posts_pagination();
 		?>

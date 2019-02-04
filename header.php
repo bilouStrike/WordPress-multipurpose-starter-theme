@@ -18,7 +18,7 @@
 	<body <?php body_class(); ?>>
 		<?php
 			/*
-			Get and show the active header template
+			The main header
 			*/
 			gtnw_section_helper::show_the_header_section();
 		?>
