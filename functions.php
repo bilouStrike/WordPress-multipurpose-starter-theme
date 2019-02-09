@@ -31,6 +31,9 @@ require_once('includes/load_enqueue.php');
 // Configration values
 require_once('includes/gtnw_config.php');
 
+// Components system
+require_once('includes/gtnw_components.php');
+
 add_action('load_setting' , array('gtnw_config','global_setter') , 10);
 
 do_action('load_setting');

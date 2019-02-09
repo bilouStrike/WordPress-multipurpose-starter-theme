@@ -4,6 +4,7 @@ define('GUTENWORD_THEME_DIR' , get_template_directory());
 define('GUTENWORD_THEME_URI' , get_template_directory_uri());
 define('GUTENWORD_THEME_PANEL' , get_template_directory().'/includes/admin');
 define('GUTENWORD_COMPONENTS' , get_template_directory().'/includes/components');
+define('GUTENWORD_INCLUDES' , get_template_directory().'/includes');
 
 define('DEFAULT_TEMPLATE' , 'template_1');
 define('DEFAULT_HEADER_STYLE' , 'header_style_1');

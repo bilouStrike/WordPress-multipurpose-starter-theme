@@ -5,8 +5,20 @@
  */
 class gtnw_components
 {
-	private static $components_path = GUTENWORD_COMPONENTS;
-
+	/**
+	* This function use to load and render component
+	* @param $component component class name 
+	* @param $option_name value to check if the component i enable by theme panel 
+	* @param $attr component attributes
+	*/
+	public static function render($component , $option_name , $attr = '')
+	{
+		// check if the component is enable
+		if( gtnw_options::get_the_option($name))
+		{
+			return $component::render($attr);
+		}
+	}
 	public static function gtnw_img_logo( $style , $class )
 	{
 		$url = gtnw_options::get_the_option('gtnw_logo');
@@ -29,9 +41,11 @@ class gtnw_components
 
 	public static function gtnw_posts_pagination()
 	{
-		$path = self::$components_path.'/posts_pagination.php';
+		/*$path = self::$GUTENWORD_COMPONENTS.'/posts_pagination.php';
 		gtnw_section_helper::load_the_style('posts_pagination',$path);
+		*/
 	}
+
 	
 }
 
