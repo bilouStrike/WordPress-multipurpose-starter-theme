@@ -7,7 +7,7 @@ class gtnw_single
 	function __construct( $post )
 	{
 		if ( gettype( $post ) != 'object' or get_class( $post ) != 'WP_Post' ) {
-            echo 'Not WP_Post' ;
+            gtnw_system::throw_error(__FILE__ , 'This call is not WP_Post ');
             return;
         }
         $this->post = $post ;

@@ -12,12 +12,14 @@ class gtnw_options {
 	public function __construct()
 	{
 		$options = get_option('gtnw_options');
-		self::$gtnw_options= $options;
+		self::$gtnw_options = $options;
 	}
+
 	public static function get_the_option($option_name , $default = '')
 	{
 		if(empty((self::$gtnw_options[$option_name])))
 		{
+			echo $option_name.' : i call from db';
 			$options = get_option('gtnw_options');
 			self::$gtnw_options[$option_name] = $options[$option_name];
 		}

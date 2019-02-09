@@ -19,11 +19,11 @@ require_once('includes/setup.php');
 // Autoloading classes
 require_once('includes/autoload.php');
 
+// Options manager 
+//require_once('includes/gtnw_options.php');
+
 // load constants 
 require_once('includes/constants.php');
-
-// Options manager 
-require_once('includes/gtnw_options.php');
 
 // styles and scripts
 require_once('includes/load_enqueue.php');
@@ -31,17 +31,17 @@ require_once('includes/load_enqueue.php');
 // Configration values
 require_once('includes/gtnw_config.php');
 
-// helpers class
-require_once('includes/gtnw_section_helper.php');
+add_action('load_setting' , array('gtnw_config','global_setter') , 10);
 
+do_action('load_setting');
+// helpers class
+//require_once('includes/gtnw_section_helper.php');
 // Ajax 
 require_once('includes/gtnw_ajax.php');
 
+
 // Components system 
 require_once('includes/gtnw_components.php');
-
-// Autoloading classes
-require_once('includes/autoload.php');
 
 /*add_filter( 'template_include', 'var_template_include', 1000 );
 function var_template_include( $t ){

@@ -5,6 +5,7 @@
 class gtnw_section_helper
 {
 	private static $activate_section = array();
+	
 	private static $section_style_path =  array(
 		'header' 			=> GUTENWORD_THEME_DIR .'/parts/header' ,
 		'posts_loop'		=> GUTENWORD_THEME_DIR .'/parts/posts_loop_style',
@@ -45,7 +46,7 @@ class gtnw_section_helper
 		}
 		else
 		{
-			echo 'The file : '.$style_path.' not exists!';
+			gtnw_system::throw_error(__FILE__ , 'The file : '.$style_name.' is missing');
 		}
 	}
 

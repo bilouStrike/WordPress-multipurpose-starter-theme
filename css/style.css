@@ -62,3 +62,12 @@ body .header {
     background-color: #767676;
     color: #fff;
 }
+.soft_error_div {
+    padding:10px;
+    border:1px solid #FF4000;
+    border-radius: 5px;
+}
+.soft_error_div h1{
+   font-size: 16px;
+   font-weight: bold;
+}

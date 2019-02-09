@@ -1,4 +1,17 @@
 <div class="form-group">
+	<label> Post Style (Section) :</label>
+	<select name="gtnw_single_post_style" class="form-control">
+	    <?php
+	    	$loop_styles = gtnw_config::get_global_config('gtnw_gp_single_post_styles');
+	        foreach ($loop_styles as $name => $value) {
+	       	?>
+	       		<option value="<?php echo $name; ?>" <?php if(gtnw_options::$gtnw_options['gtnw_single_post_style'] == $name) { echo 'selected'; } ?> > <?php echo $value['name']; ?>  </option>
+	       	<?php
+		    }
+	    ?>
+	</select>
+</div>
+<div class="form-group">
 	<label> Show the ahthor : </label><br>
 	<input type="hidden" name="gtnw_show_author" value="off"> 
 	<input type="checkbox" name="gtnw_show_author" value="on" <?php if(gtnw_options::$gtnw_options['gtnw_show_author'] == 'on' ) { echo 'checked'; } ?>>  Author name
