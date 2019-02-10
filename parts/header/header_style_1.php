@@ -16,7 +16,9 @@
                             <div class="header-ads">
                                 <!-- The Adsense Code here -->
                                 <img src="" alt="" >
-                                <?php gtnw_components::render('text' , 'gtnw_ad' , array('arg1'=> 'text to render')); ?>
+                                <div class="ads-div">
+                                    <?php gtnw_components::render('ad' , 'gtnw_ad_display' , array('location'=> 'header')); ?>
+                                </div>
                             </div>
                         </div>
                 </div>
