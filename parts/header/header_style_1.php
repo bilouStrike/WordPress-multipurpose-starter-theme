@@ -13,7 +13,7 @@
                             </div>
                         </div>
                         <div class="col-sm">
-                            <div class="header-ads">
+                            <div id="header-ads">
                                 <!-- The Adsense Code here -->
                                 <img src="" alt="" >
                                 <div class="ads-div">
