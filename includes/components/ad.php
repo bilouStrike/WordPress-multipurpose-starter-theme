@@ -1,12 +1,11 @@
 <?php
 
-class ad
+class ad extends gtnw_component
 {
 	// Rendering ad component
-	static function render($attr)
+	public function render($attr ='')
 	{
 		$ad = gtnw_options::get_the_option('gtnw_ad');
-
 		$output .= '<script type="text/javascript">' . "\n";
 		$output .= 'jQuery(function($){';
 		if (isset($ad['hide_phone'] ) && $ad['hide_phone'] == 'on')

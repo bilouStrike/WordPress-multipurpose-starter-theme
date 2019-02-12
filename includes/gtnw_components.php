@@ -11,12 +11,12 @@ class gtnw_components
 	* @param $option_name value to check if the component i enable by theme panel 
 	* @param $attr component attributes
 	*/
-	public static function render($component , $option_name , $attr = '')
+	public static function get_component($component , $option_name)
 	{
 		// check if the component is enable
 		if(gtnw_options::get_the_option($option_name) == 'show')
 		{
-			return $component::render($attr);
+			return new $component();
 		}
 	}
 	public static function gtnw_img_logo( $style , $class )
