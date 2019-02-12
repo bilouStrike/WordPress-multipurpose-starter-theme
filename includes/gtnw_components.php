@@ -14,10 +14,10 @@ class gtnw_components
 	public static function render($component , $option_name , $attr = '')
 	{
 		// check if the component is enable
-		//if( gtnw_options::get_the_option($name))
-		//{
+		if(gtnw_options::get_the_option($option_name) == 'show')
+		{
 			return $component::render($attr);
-		//}
+		}
 	}
 	public static function gtnw_img_logo( $style , $class )
 	{

@@ -2,14 +2,14 @@
 
 class ad
 {
-	// Rendering ad component : return the code
+	// Rendering ad component
 	static function render($attr)
 	{
 		$ad = gtnw_options::get_the_option('gtnw_ad');
 
 		$output .= '<script type="text/javascript">' . "\n";
 		$output .= 'jQuery(function($){';
-		if (isset($ad['phone'] ) && $ad['hide_phone'] == 'on')
+		if (isset($ad['hide_phone'] ) && $ad['hide_phone'] == 'on')
 		{
 			$output .= 'if (window.matchMedia("(max-width: 480px)").matches) {
     		$(".ads-div").hide(); }';
