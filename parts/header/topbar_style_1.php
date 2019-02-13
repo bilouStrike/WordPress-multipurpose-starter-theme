@@ -6,7 +6,7 @@
         </div>
         <div class="social-media">
         <!-- Social Media Icons -->
-        <?php //gtnw_section_helper::show_topbar_social_icon(); ?>
+        <?php gtnw_components::get_component('social_icons')->render('gtnw_cmpnt_social_icons' , array('arg1'=>'param1')); ?>
         </div>
     </nav>
 </div>

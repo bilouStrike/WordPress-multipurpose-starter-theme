@@ -32,6 +32,7 @@ class gtnw_panel {
 				<?php require_once 'category.php';?>
 				<?php require_once 'single_post.php';?>
 				<?php require_once 'ad_manager.php';?>
+				<?php require_once 'social_icons.php';?>
 				<input type="submit" name="process" value="submit">
 			</form>	
 		</div>

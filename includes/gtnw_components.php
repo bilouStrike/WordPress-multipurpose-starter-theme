@@ -8,16 +8,14 @@ class gtnw_components
 	/**
 	* This function use to load and render component
 	* @param $component component class name 
-	* @param $option_name value to check if the component i enable by theme panel 
-	* @param $attr component attributes
 	*/
-	public static function get_component($component , $option_name)
+	public static function get_component($component)
 	{
 		// check if the component is enable
-		if(gtnw_options::get_the_option($option_name) == 'show')
-		{
-			return new $component();
-		}
+		//if(gtnw_options::get_the_option($option_name) == 'show')
+		//{
+			return new $component($option_name);
+		//}
 	}
 	public static function gtnw_img_logo( $style , $class )
 	{

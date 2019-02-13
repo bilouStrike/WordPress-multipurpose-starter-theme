@@ -5,7 +5,7 @@
 </div>
 <div class="form-group">
 	<label> header Ad code :</label><br>
-	<textarea name="gtnw_ad[ad_code]" cols="45"> <?php if(isset(gtnw_options::$gtnw_options["gtnw_ad"]["hide_phone"] )) { echo gtnw_options::$gtnw_options["gtnw_ad"]["hide_phone"] ; } ?>  </textarea>
+	<textarea name="gtnw_ad[ad_code]" cols="45"> <?php if(isset(gtnw_options::$gtnw_options["gtnw_ad"]["ad_code"] )) { echo gtnw_options::$gtnw_options["gtnw_ad"]["ad_code"] ; } ?>  </textarea>
 </div>
 <div class="form-group">
 	<label> Hide on phone : </label><br>

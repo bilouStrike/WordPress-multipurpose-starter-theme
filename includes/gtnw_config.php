@@ -7,12 +7,12 @@ class gtnw_config
 {
 	public static $global_config =  array();
 
-	// 
 	const header_styles_group_name = 'gtnw_gp_header_styles' ;
 	const topbar_styles_group_name = 'gtnw_gp_topbar_styles' ;
 	const loop_styles_group_name = 'gtnw_gp_posts_loop_styles' ;
 	const pagination_styles_group_name = 'gtnw_gp_pagination_styles' ;
 	const single_post_styles_group_name = 'gtnw_gp_single_post_styles' ;
+	const social_icons_list_group_name = 'gtnw_social_icons_list' ;
 
 	public static function global_setter()
 	{
@@ -21,6 +21,7 @@ class gtnw_config
 		self::loop_posts_styles();
 		self::pagination_component_styles();
 		self::single_posts_styles();
+		self::social_icons_list();
 	}
 
 	/**
@@ -121,8 +122,9 @@ class gtnw_config
 			'img'	=> ''
 		));
 	}
+
 	/**
-	* Get all styles of pagination component
+	* Set all styles of pagination component
 	*/
 	public static function pagination_component_styles()
 	{
@@ -137,6 +139,25 @@ class gtnw_config
 		self::_add_config_data_helper(self::pagination_styles_group_name , 'infinite_pagination' , array(
 			'name'  => 'Inifinite with scroll',
 			'img'	=> ''
+		));
+	}
+
+	/*
+	* Social icons list
+	*/
+	public static function social_icons_list()
+	{
+		self::_add_config_data_helper(self::social_icons_list_group_name , 'facebook' , array(
+			'name'  => 'Facebook',
+			'icon'	=> '' // To display in theme panel
+		));
+		self::_add_config_data_helper(self::social_icons_list_group_name , 'twitter' , array(
+			'name'  => 'Twitter',
+			'icon'	=> '' // To display in theme panel
+		));
+		self::_add_config_data_helper(self::social_icons_list_group_name , 'google_plus' , array(
+			'name'  => 'Google plus',
+			'icon'	=> '' // To display in theme panel
 		));
 	}
 
