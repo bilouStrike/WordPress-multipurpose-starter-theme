@@ -1,8 +1,7 @@
 <?php
 
-class ad extends gtnw_component
+class ad extends component
 {
-	// Rendering ad component
 	public function render($component_enable,$attr ='')
 	{
 		if(parent::check_component($component_enable))

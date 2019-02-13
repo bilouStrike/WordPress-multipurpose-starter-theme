@@ -22,7 +22,7 @@ class gtnw_options {
 	{
 		if(empty((self::$gtnw_options[$option_name])))
 		{
-			echo $option_name.' : i call from db';
+			//echo $option_name.' : i call from db';
 			$options = get_option('gtnw_options');
 			self::$gtnw_options[$option_name] = $options[$option_name];
 		}

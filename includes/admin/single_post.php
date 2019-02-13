@@ -38,8 +38,8 @@
 </div>
 <div class="form-group">
 	<label> Show Next / Prev post : </label><br>
-	<input type="hidden" name="gtnw_show_next_prev" value="off"> 
-	<input type="checkbox" name="gtnw_show_next_prev" value="on" <?php if(gtnw_options::$gtnw_options['gtnw_show_next_prev'] == 'on' ) { echo 'checked'; } ?>>  Next / Prev post
+	<input type="hidden" name="gtnw_cmpnt_nextPrev_post" value="hide"> 
+	<input type="checkbox" name="gtnw_cmpnt_nextPrev_post" value="show" <?php if(gtnw_options::$gtnw_options['gtnw_cmpnt_nextPrev_post'] == 'show' ) { echo 'checked'; } ?>>  Next / Prev post
 </div>
 <div class="form-group">
 	<label> Show the Tags : </label><br>

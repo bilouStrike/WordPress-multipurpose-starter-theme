@@ -17,7 +17,7 @@
 		</div>
 		<div class="single-footer">
 			<?php
-				echo $the_single_post->the_next_prev_post().'<br>' ;
+				gtnw_components::get_component('next_prev_post')->render('gtnw_cmpnt_nextPrev_post');
 			?>
 		</div>
 		<?php

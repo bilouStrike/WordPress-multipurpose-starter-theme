@@ -1,12 +1,7 @@
 <?php
 
-class social_icons extends gtnw_component
+class social_icons extends component
 {
-	/**
-	* @param style 
-	* Return only the activate social icons with their links.
-	* 
-	*/
 	public function render($component_enable , $attr ='') {
 		if(parent::check_component($component_enable))
 		{

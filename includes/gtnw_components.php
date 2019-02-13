@@ -5,17 +5,24 @@
  */
 class gtnw_components
 {
+	public static $instances = array();
 	/**
 	* This function use to load and render component
 	* @param $component component class name 
 	*/
 	public static function get_component($component)
 	{
-		// check if the component is enable
-		//if(gtnw_options::get_the_option($option_name) == 'show')
-		//{
-			return new $component($option_name);
-		//}
+		// Verify if class instant exist, if no : new instans and save it in array
+		if (isset(self::$instances[$component]))
+		{
+			return self::$instances[$component];
+		}
+		else
+		{
+			$new_instance = new $component();
+			self::$instances[$component] = $new_instance;
+			return $new_instance;
+		}
 	}
 	public static function gtnw_img_logo( $style , $class )
 	{
@@ -31,20 +38,6 @@ class gtnw_components
 			echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
 		}
 	}
-
-	public static function gtnw_text_logo( $style , $class )
-	{
-		
-	}
-
-	public static function gtnw_posts_pagination()
-	{
-		/*$path = self::$GUTENWORD_COMPONENTS.'/posts_pagination.php';
-		gtnw_section_helper::load_the_style('posts_pagination',$path);
-		*/
-	}
-
-	
 }
 
 ?>

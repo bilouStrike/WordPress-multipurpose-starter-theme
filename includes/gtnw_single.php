@@ -119,30 +119,6 @@ class gtnw_single
 	}
 
 	/*
-	* Get the post Next/Prev links
-	*/
-	function the_next_prev_post()
-	{
-		if ( gtnw_options::get_the_option('gtnw_show_next_prev') == 'off' )
-		{
-			return;
-		}
-		$output = '' ;
-		$next_post = get_next_post();
-        $previous_post = get_previous_post();
-
-        if ( !empty( $next_post->ID ) )
-        {
-        	$output .= '<a href="'.get_permalink($next_post->ID).'"> Next Post : '.get_the_title($next_post->ID).' </a>';
-        }
-        if ( !empty( $previous_post->ID ) )
-        {
-        	$output .= '<a href="'.get_permalink($previous_post->ID).'"> Previous Post : '.get_the_title($previous_post->ID).' </a>';
-        }
-        return $output ;
-	}
-
-	/*
 	* Post pagination for post split
 	*/
 	function the_post_pagination()
