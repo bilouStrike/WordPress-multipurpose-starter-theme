@@ -29,8 +29,6 @@ function load_admin_script()
 		// Admin style
   		wp_enqueue_style( 'style', get_template_directory_uri() . '/includes/admin/css/style.css?v='.time() );
   		
-  		
-
   		// Ajax update 
 		wp_register_script( 'gtnw_ajax_handle', get_template_directory_uri() . '/includes/admin/js/admin.js?v='.time(), array('jquery'), null, true);	
 		wp_enqueue_script( 'gtnw_ajax_handle');

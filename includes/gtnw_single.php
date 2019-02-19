@@ -2,7 +2,7 @@
 
 class gtnw_single 
 {
-	private $post;
+	public $post;
 
 	function __construct( $post )
 	{
@@ -99,10 +99,18 @@ class gtnw_single
 	*/
 	function the_post_view()
 	{
-		if ( gtnw_options::get_the_option('gtnw_show_post_views') == 'off' )
+		/*if ( gtnw_options::get_the_option('gtnw_show_post_views') == 'off' )
 		{
 			return;
-		}
+		}*/
+		$count_key = 'gtnw_post_views_counter';
+	    $count = get_post_meta($this->post->ID , $count_key, true);
+	    if($count==''){
+	        delete_post_meta($this->post->ID , $count_key);
+	        add_post_meta($this->post->ID , $count_key, '0');
+	        return "0 View";
+	    }
+	    return $count.' Views';
 	}
 
 	/**
@@ -134,6 +142,27 @@ class gtnw_single
             'nextpagelink'     => ' > ',
             'previouspagelink' => ' < '
         ));
+	}
+
+	/*
+	* increment the post views 
+	*/
+	public function update_post_views()
+	{
+		global $page;
+		$count_meta_key = 'gtnw_post_views_counter' ;
+		if( is_single() && empty($page) || $page == 1  )
+		{
+			$count = get_post_meta($this->post->ID, $count_meta_key , true);
+                if ($count == '') 
+                {
+                    update_post_meta($this->post->ID, $count_meta_key, 1);
+                } else 
+                {
+                    $count++;
+                    update_post_meta($this->post->ID, $count_meta_key, $count);
+            	}
+		}
 	}
 
 }

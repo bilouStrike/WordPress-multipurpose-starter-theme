@@ -10,7 +10,10 @@
 <?php get_header(); ?>
 		<?php
 		// Header dynamic section
+		global $post;
+		//gtnw_single::update_post_views($post->ID);
 		gtnw_section_helper::show_the_single();
+
 		?>
 <?php get_sidebar(); ?>
 </div>
